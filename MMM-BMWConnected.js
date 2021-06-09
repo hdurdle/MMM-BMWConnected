@@ -5,6 +5,10 @@ Module.register('MMM-BMWConnected', {
     refresh: 15,
     vehicleAngle: 300,
     distance: "miles",
+    showMileage: true,
+    showElectricRange: true,
+    showFuelRange: true,
+    lastUpdatedText: "last updated",
     debug: false
   },
 
@@ -92,10 +96,13 @@ Module.register('MMM-BMWConnected', {
 
     var mileage = document.createElement("span");
     mileage.classList.add("mileage");
-    mileage.appendChild(this.faIconFactory("fa-road"));
-    mileage.appendChild(document.createTextNode(info.mileage + " " + distanceSuffix));
+    if (this.config.showMileage) {
+      mileage.appendChild(this.faIconFactory("fa-road"));
+      mileage.appendChild(document.createTextNode(info.mileage + " " + distanceSuffix));
+    } else {
+      mileage.appendChild(document.createTextNode("\u00a0"));
+    }
     carContainer.appendChild(mileage);
-
     wrapper.appendChild(carContainer);
 
     //
@@ -142,16 +149,25 @@ Module.register('MMM-BMWConnected', {
 
     carContainer = document.createElement("div");
     carContainer.classList.add("bmw-container");
+
     var elecRange = document.createElement("span");
     elecRange.classList.add("elecRange");
-    elecRange.appendChild(this.faIconFactory("fa-charging-station"));
-    elecRange.appendChild(document.createTextNode(info.electricRange + " " + distanceSuffix));
+    if (this.config.showElectricRange) {
+      elecRange.appendChild(this.faIconFactory("fa-charging-station"));
+      elecRange.appendChild(document.createTextNode(info.electricRange + " " + distanceSuffix));
+    } else {
+      elecRange.appendChild(document.createTextNode("\u00a0"));
+    }
     carContainer.appendChild(elecRange);
 
     var fuelRange = document.createElement("span");
     fuelRange.classList.add("fuelRange");
-    fuelRange.appendChild(this.faIconFactory("fa-gas-pump"));
-    fuelRange.appendChild(document.createTextNode(info.fuelRange + " " + distanceSuffix));
+    if (this.config.showFuelRange) {
+      fuelRange.appendChild(this.faIconFactory("fa-gas-pump"));
+      fuelRange.appendChild(document.createTextNode(info.fuelRange + " " + distanceSuffix));
+    } else {
+      fuelRange.appendChild(document.createTextNode("\u00a0"));
+    }
     carContainer.appendChild(fuelRange);
     wrapper.appendChild(carContainer);
 
@@ -162,7 +178,7 @@ Module.register('MMM-BMWConnected', {
     var updated = document.createElement("span");
     updated.classList.add("updated");
     updated.appendChild(this.faIconFactory("fa-info"));
-    var lastUpdateText = "last updated " + moment(info.updateTime).fromNow();
+    var lastUpdateText = this.config.lastUpdatedText + " " + moment(info.updateTime).fromNow();
     if (this.config.debug) {
       lastUpdateText += " [" + info.unitOfLength + "]";
     }

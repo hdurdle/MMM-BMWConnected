@@ -68,6 +68,22 @@ The module has a few configuration options:
       <td><code>distance</code></td>
       <td>The unit of distance used for mileage and range. <br /><br /><strong>Default: </strong><code>miles</code><br/>Can be: miles or km.</td>
     </tr>
+    <tr>
+      <td><code>showMileage</code></td>
+      <td>Whether to show the mileage. <br /><br /><strong>Default: </strong><code>true</code>
+    </tr>
+    <tr>
+      <td><code>showElectricRange</code></td>
+      <td>Whether to show the electric range. <br /><br /><strong>Default: </strong><code>true</code>
+    </tr>
+    <tr>
+      <td><code>showFuelRange</code></td>
+      <td>Whether to show the fuel range. <br /><br /><strong>Default: </strong><code>true</code>
+    </tr>
+    <tr>
+      <td><code>lastUpdatedText</code></td>
+      <td>The text to be shown before last updated timestamp. <br /><br /><strong>Default: </strong><code>last updated</code>
+    </tr>
   </tbody>
 </table>
 
