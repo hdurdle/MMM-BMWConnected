@@ -4,9 +4,11 @@ Module.register('MMM-BMWConnected', {
     apiBase: "www.bmw-connecteddrive.co.uk",
     refresh: 15,
     vehicleAngle: 300,
+    vehicleOpacity: 1.0,
     distance: "miles",
     showMileage: true,
     showElectricRange: true,
+    showElectricPercentage: false,
     showFuelRange: true,
     lastUpdatedText: "last updated",
     debug: false
@@ -144,6 +146,9 @@ Module.register('MMM-BMWConnected', {
         break;
     }
 
+    if (this.config.showElectricPercentage) {
+      battery.appendChild(document.createTextNode(info.chargingLevelHv + " %"));
+    }
     carContainer.appendChild(battery);
     wrapper.appendChild(carContainer);
 
@@ -193,6 +198,7 @@ Module.register('MMM-BMWConnected', {
     var imageContainer = document.createElement("span");
     var imageObject = document.createElement("img");
     imageObject.setAttribute('src', info.imageUrl);
+    imageObject.setAttribute('style', 'opacity: ' + this.config.vehicleOpacity + ';');
     imageContainer.appendChild(imageObject);
     carContainer.appendChild(imageContainer);
 
