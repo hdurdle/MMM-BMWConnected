@@ -52,7 +52,7 @@ The module has a few configuration options:
       <td><code>password</code></td>
       <td>Your password for the BMW Connected Drive platform.<br /><br /><strong>Default: </strong><code>undefined</code></td>
     </tr>
-            <tr>
+    <tr>
       <td><code>apiBase</code></td>
       <td>The location of the base API URL for your region.<br /><br /><strong>Default: </strong><code>www.bmw-connecteddrive.co.uk</code></td>
     </tr>
@@ -64,9 +64,33 @@ The module has a few configuration options:
       <td><code>vehicleAngle</code></td>
       <td>The angle of rotation for the car image. <br /><br /><strong>Default: </strong><code>300</code><br/>Between 0 and 350 in increments of 10.</td>
     </tr>
+    <tr>
+      <td><code>vehicleOpacity</code></td>
+      <td>Opacity of the car image. <br /><br /><strong>Default: </strong><code>1.0</code><br/>Between 0.0 and 1.0.</td>
+    </tr>
             <tr>
       <td><code>distance</code></td>
       <td>The unit of distance used for mileage and range. <br /><br /><strong>Default: </strong><code>miles</code><br/>Can be: miles or km.</td>
+    </tr>
+    <tr>
+      <td><code>showMileage</code></td>
+      <td>Whether to show the mileage. <br /><br /><strong>Default: </strong><code>true</code>
+    </tr>
+    <tr>
+      <td><code>showElectricRange</code></td>
+      <td>Whether to show the electric range. <br /><br /><strong>Default: </strong><code>true</code>
+    </tr>
+    <tr>
+      <td><code>showElectricPercentage</code></td>
+      <td>Whether to show the battery charging also in percentages. <br /><br /><strong>Default: </strong><code>false</code>
+    </tr>
+    <tr>
+      <td><code>showFuelRange</code></td>
+      <td>Whether to show the fuel range. <br /><br /><strong>Default: </strong><code>true</code>
+    </tr>
+    <tr>
+      <td><code>lastUpdatedText</code></td>
+      <td>The text to be shown before last updated timestamp. <br /><br /><strong>Default: </strong><code>last updated</code>
     </tr>
   </tbody>
 </table>
