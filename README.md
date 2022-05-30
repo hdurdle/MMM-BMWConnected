@@ -1,3 +1,11 @@
+# Archived
+
+I no longer use Magic Mirror, so this project will be archived.  I suggest you use the most up to date of the forks (as of May 2022):
+https://github.com/jannekalliola/MMM-BMWConnected
+
+
+
+
 # MMM-BMWConnected
 Magic Mirror Module to display data from BMW Connected drive for your car.
 
